@@ -57,8 +57,8 @@ def generate_all_combos(players, nations_pool=None, mats_pool=None):
         mats_pool = mats_ifa.copy()
 
     player = players[0]
-    viable_nations = [nation for nation in nations_pool if (player.use_ifa_nations or nation in nations_standard and
-                                                            nation != player.nation_blacklist)]
+    viable_nations = [nation for nation in nations_pool if (player.use_ifa_nations or nation in nations_standard) and
+                                                            nation != player.nation_blacklist]
     viable_mats = [mat for mat in mats_pool if (player.use_ifa_mats or mat in mats_standard)]
     combos_this_player = [(nation, mat) for nation in viable_nations for mat in viable_mats]
 
